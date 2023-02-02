@@ -38,18 +38,20 @@ export default function CitySelector() {
         <option value="Barcelona">Barcelona</option>
         <option value="Sydney">Sydney</option>
       </select>
-      <h1>Ciudad de {state.city?.name}</h1>
-      <Temp
-        temp={(state.list[0].main?.temp - 273.15).toFixed(2)}
-        max={(state.list[0].main?.temp_max - 273.15).toFixed(2)}
-        min={(state.list[0].main?.temp_min - 273.15).toFixed(2)}
-      />
-      <Time />
-      <DataWeather
-        humidity={state.main?.humidity}
-        pressure={state.main?.pressure}
-        feels={(state.main?.feels_like - 273.15).toFixed(2)}
-      />
+      {state.city?.name && <div>
+        <h1>Ciudad de {state.city?.name}</h1>
+        <Temp
+          temp={(state.list[0].main?.temp - 273.15).toFixed(2)}
+          max={(state.list[0].main?.temp_max - 273.15).toFixed(2)}
+          min={(state.list[0].main?.temp_min - 273.15).toFixed(2)}
+        />
+        <Time />
+        <DataWeather
+          humidity={state.main?.humidity}
+          pressure={state.main?.pressure}
+          feels={(state.main?.feels_like - 273.15).toFixed(2)}
+        />
+      </div>}
       <HourWeather />
       <WeekWeather />
     </div>
