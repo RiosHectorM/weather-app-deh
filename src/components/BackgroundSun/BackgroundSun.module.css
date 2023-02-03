@@ -1,0 +1,19 @@
+.container {
+background: rgb(224,255,0);
+background: radial-gradient(circle, rgba(224,255,0,1) 14%, rgba(242,183,0,0.8267682072829132) 38%, rgba(246,3,4,0.700717787114846) 64%);
+	background-size: 300% 300%;
+	animation: gradient 10s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

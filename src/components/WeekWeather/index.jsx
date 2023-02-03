@@ -1,24 +1,22 @@
 import React from "react";
-import styles from "./WeekWeather.module.css";
+import { CONTAINERMAIN } from "../../cssGlobals.jsx";
+import CloudIcon from "./Icons/cloudIcon.jsx";
+import SunIcon from "./Icons/SunIcon.jsx";
 
 function WeekWeather() {
   return (
     <div className="flex h-screen flex-col">
       <h3>Week Weather</h3>
-      <div className="flex justify-around rounded-b-3xl bg-black bg-opacity-50 py-2">
-        <div className="m-2 flex flex-1 flex-col py-5 text-center">
-          <img src="../../../Capturas-Ideas/svgrain.svg" alt="" />
+      <div className={CONTAINERMAIN}>
+        <div className="m-2 flex flex-1 flex-col py-5 text-center justify-center items-center">
+          <SunIcon />
           <div className="text-white">
             <p className="text-2xl">TODAY</p>
             <p className="m-0 flex-nowrap p-0">T° MAX | T° MIN</p>
           </div>
         </div>
         <div className="m-2 flex-1 rounded-lg py-5 text-center">
-          <img
-            src="https://www.diariohispaniola.com/fotos/1/100412_newicondhsoleado_thumb_620.jpg"
-            alt="weather"
-            className="m-auto h-36 w-48 rounded-full"
-          />
+          <CloudIcon />
           <div className="text-white">
             <p>TODAY+1</p>
             <p className="m-0 flex-nowrap p-0">T° MAX | T° MIN</p>
@@ -47,6 +45,36 @@ function WeekWeather() {
           </div>
         </div>
       </div>
+
+      {/* <h1>Weather</h1>
+      <div class="container">
+
+        <div class="weathercloud">
+          <div class="cloud"></div>
+          <div class="cloud"></div>
+        </div>
+        <div class="weather-snow">
+          <div class="snow">
+            <div class="f"></div>
+          </div>
+        </div>
+        <div class="weathercloudAndSun">
+          <div class="cloud"></div>
+          <div class="sun">
+            <div class="rays"></div>
+            <div class="rays"></div>
+            <div class="rays"></div>
+            <div class="rays"></div>
+          </div>
+        </div>
+        <div class="weather-rain">
+          <div class="cloud"></div>
+          <div class="rain"></div>
+          <div class="rain"></div>
+          <div class="rain"></div>
+          <div class="rain"></div>
+        </div>
+      </div> */}
     </div>
   );
 }
