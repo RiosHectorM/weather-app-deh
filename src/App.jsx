@@ -3,6 +3,7 @@ import CitySelector from "./components/CitySelector/";
 import BackgroundRain from "./components/BackgroundRain/";
 import BackgroundSnow from "./components/BackgroundSnow/";
 import BackgroundCloud from "./components/BackgroundCloud/";
+import BackgroundSun from "./components/BackgroundSun/";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <h1 className="font-bold">APP DEL CLIMA</h1>
       {/* <BackgroundRain /> */}
       {/* <BackgroundSnow /> */}
+      {/* <BackgroundCloud /> */}
       <BackgroundCloud />
       <CitySelector />
     </div>
