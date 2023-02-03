@@ -7,11 +7,7 @@ function WeekWeather() {
       <h3>Week Weather</h3>
       <div className="flex justify-around rounded-b-3xl bg-black bg-opacity-50 py-2">
         <div className="m-2 flex flex-1 flex-col py-5 text-center">
-          <img
-            src="https://www.viajarafrancia.com/wp-content/uploads/2014/10/clima-1.jpg"
-            alt="weather"
-            className="m-auto h-36 w-48 rounded-full"
-          />
+          <img src="../../../Capturas-Ideas/svgrain.svg" alt="" />
           <div className="text-white">
             <p className="text-2xl">TODAY</p>
             <p className="m-0 flex-nowrap p-0">T° MAX | T° MIN</p>
