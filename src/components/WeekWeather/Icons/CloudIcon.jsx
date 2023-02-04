@@ -3,10 +3,10 @@ import styles from "../WeekWeather.module.css";
 
 function CloudIcon() {
   return (
-    <div className={styles.weathercloud}>
-      <div className={styles.cloud}></div>
-      <div className={styles.cloud}></div>
-    </div>
+      <div className={`${styles.weathercloud} mt-auto`}>
+        <div className={styles.cloud}></div>
+        <div className={styles.cloud}></div>
+      </div>
   );
 }
 

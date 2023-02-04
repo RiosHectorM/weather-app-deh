@@ -16,6 +16,8 @@ export default function CitySelector() {
     setCity(e.target.value);
   };
 
+
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(actions.selectedCity(city));
@@ -23,37 +25,38 @@ export default function CitySelector() {
 
   return (
     <div>
-      <h1>City Selector</h1>
-      <select
-        value={Children.value}
-        name="citySelector"
-        id="citySelector"
-        onChange={handleChange}
+      <div
+        className={`flex flex-col sm:flex-row flex-wrap rounded-3xl bg-black bg-opacity-70 py-2 mx-10 md:mx-32 text-white justify-center `}
       >
-        <option value="Cordoba">Cordoba</option>
-        <option value="Buenos Aires">Buenos Aires</option>
-        <option value="Bogota">Bogota</option>
-        <option value="Mexico">Mexico</option>
-        <option value="Madrid">Madrid</option>
-        <option value="Barcelona">Barcelona</option>
-        <option value="Sydney">Sydney</option>
-      </select>
-      {state.city?.name && <div>
-        <h1>Ciudad de {state.city?.name}</h1>
-        <Temp
-          temp={(state.list[0].main?.temp - 273.15).toFixed(2)}
-          max={(state.list[0].main?.temp_max - 273.15).toFixed(2)}
-          min={(state.list[0].main?.temp_min - 273.15).toFixed(2)}
+        <h1 className="font-extrabold tracking-widest">CITY SELECTOR</h1>
+        <input
+          className="text-black text-center w-1/4 ml-9 uppercase "
+          type="text"
+          name="cityInput"
+          id="cityInput"
         />
-        <Time />
-        <DataWeather
-          humidity={state.main?.humidity}
-          pressure={state.main?.pressure}
-          feels={(state.main?.feels_like - 273.15).toFixed(2)}
-        />
-      </div>}
-      <HourWeather />
-      <WeekWeather />
+      </div>
+
+      <div>
+        {state.city?.name && (
+          <div>
+            <h1>Ciudad de {state.city?.name}</h1>
+            <Temp
+              temp={(state.list[0].main?.temp - 273.15).toFixed(2)}
+              max={(state.list[0].main?.temp_max - 273.15).toFixed(2)}
+              min={(state.list[0].main?.temp_min - 273.15).toFixed(2)}
+            />
+            <Time />
+            <DataWeather
+              humidity={state.main?.humidity}
+              pressure={state.main?.pressure}
+              feels={(state.main?.feels_like - 273.15).toFixed(2)}
+            />
+          </div>
+        )}
+        <HourWeather />
+        <WeekWeather />
+      </div>
     </div>
   );
 }

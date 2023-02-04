@@ -18,7 +18,7 @@ function App() {
   const condition = "Clouds";
   return (
     <div className="App text-center">
-      <h1 className="font-bold">APP DEL CLIMA</h1>
+      <h1 className="font-bold">WEATHER APP (DEH)</h1>
       {condition === "Clear" ? <BackgroundSun /> 
        : condition === "Drizzle" ||
         condition === "Thunderstorm" ||
