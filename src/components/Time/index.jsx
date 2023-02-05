@@ -1,8 +1,11 @@
 import React from "react";
 
 function Time() {
-  let hour = new Date().toString();
-  return <div>Time: {hour}</div>;
+  return (
+    <div>
+      <div>Time: asdasd </div>
+    </div>
+  );
 }
 
 export default Time;

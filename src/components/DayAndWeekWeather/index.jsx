@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 import HourWeather from "./HourWeather";
 import WeekWeather from "./WeekWeather";
 
-function index() {
+function index(data) {
   return (
     <div>
-      <HourWeather />
-      <WeekWeather />
+      {data.data && <HourWeather data={data.data.list} />}
+      {data.data && <WeekWeather data={data.data.list} />}
     </div>
-  )
+  );
 }
 
-export default index
+export default index;

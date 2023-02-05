@@ -15,6 +15,7 @@ import * as actions from "./redux/actions/actions";
 function App() {
   const state = useSelector((state) => state.selectedCity);
 
+
   const APIKEY = "b08d19a14cd7ae896b7e4b1c1c5aa351";
 
   const [city, setCity] = useState({
@@ -88,7 +89,7 @@ function App() {
               />
             </div>
           )}
-          <DayAndWeekWeather />
+          <DayAndWeekWeather data={state} />
         </div>
       </div>
     </div>
