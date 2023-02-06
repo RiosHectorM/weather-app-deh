@@ -1,5 +1,4 @@
 import "./App.css";
-//import CitySelector from "./components/CitySelector/";
 import BackgroundRain from "./components/BackgroundRain/";
 import BackgroundSnow from "./components/BackgroundSnow/";
 import BackgroundCloud from "./components/BackgroundCloud/";
@@ -11,6 +10,9 @@ import Time from "./components/Time";
 import Temp from "./components/Temp";
 import { useEffect, useState } from "react";
 import * as actions from "./redux/actions/actions";
+
+import { motion } from "framer-motion";
+import { slideIn, zoomIn } from "./constants/motion";
 
 function App() {
   const state = useSelector((state) => state.selectedCity);
@@ -51,15 +53,18 @@ function App() {
         <BackgroundCloud />
       ) : null}
       <div className="pt-2">
-        <div
-          className={`flex flex-col sm:flex-row flex-wrap rounded-3xl bg-black bg-opacity-70 py-2 mx-10 md:mx-32 text-white justify-center`}
+        <motion.div
+          variants={zoomIn(0, 1)}
+          initial="hidden"
+          whileInView="show"
+          className={`flex flex-col sm:flex-row rounded-3xl bg-black bg-opacity-70 py-2 mx-10 md:mx-20 text-white lg:mx-32 justify-center`}
         >
           <form onSubmit={handleSubmit} className="w-full">
             <label
               className="font-extrabold tracking-widest"
               htmlFor="cityInput"
             >
-              CITY SELECTOR{" "}
+              CITY SELECTOR
             </label>
             <input
               className="text-black text-center w-1/4 ml-9 "
@@ -68,12 +73,19 @@ function App() {
               id="cityInput"
             />
           </form>
-        </div>
+        </motion.div>
 
         <div>
           {state.city?.name && (
             <div>
-              <h1>Ciudad de {state.city?.name}</h1>
+              <motion.div
+                variants={slideIn("left", "spring", 0, 1)}
+                initial="hidden"
+                whileInView="show"
+                className="font-extrabold flex flex-row h-10 rounded-t-3xl bg-black bg-opacity-70 mx-10 md:mx-20 lg:mx-32 text-white justify-center text-center my-2"
+              >
+                <h1>Ciudad de {state.city?.name}</h1>
+              </motion.div>
               <Temp
                 temp={(state.list[0].main?.temp - 273.15).toFixed(2)}
                 max={(state.list[0].main?.temp_max - 273.15).toFixed(2)}
@@ -81,9 +93,9 @@ function App() {
               />
               <Time />
               <DataWeather
-                humidity={state.main?.humidity}
-                pressure={state.main?.pressure}
-                feels={(state.main?.feels_like - 273.15).toFixed(2)}
+                humidity={state.list[0].main?.humidity}
+                pressure={state.list[0].main?.pressure}
+                feels={(state.list[0].main?.feels_like - 273.15).toFixed(2)}
               />
             </div>
           )}

@@ -10,7 +10,7 @@ function RainIcon() {
       variants={zoomIn(0.3, 1)}
       initial="hidden"
       whileInView="show"
-       className="my-auto w-[100px] ">
+       className="my-auto w-[150px] ">
       <div className={`${styles.cloud} flex justify-center m-auto`}>
         <div className={styles.rain}></div>
         <div className={styles.rain}></div>

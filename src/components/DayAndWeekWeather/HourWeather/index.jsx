@@ -24,7 +24,7 @@ function HourWeather(data) {
 
   return (
     <motion.div
-      variants={slideIn("right", "spring", 1, 1)}
+      variants={slideIn("right", "spring", 0, 1)}
       initial="hidden"
       whileInView="show"
       className="flex flex-col pb-2 h-[240px]"
