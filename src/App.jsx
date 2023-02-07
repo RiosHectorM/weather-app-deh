@@ -69,15 +69,15 @@ function App() {
           whileInView="show"
           className={`flex flex-col sm:flex-row rounded-3xl bg-black bg-opacity-70 py-2 mx-10 md:mx-20 text-white lg:mx-32 justify-center`}
         >
-          <form onSubmit={handleSubmit} className="w-full">
+          <form onSubmit={handleSubmit} className="w-full justify-center flex sm:flex-row flex-col">
             <label
-              className="font-extrabold tracking-widest"
+              className="font-extrabold tracking-widest pr-2"
               htmlFor="cityInput"
             >
               CITY SELECTOR
             </label>
             <input
-              className="text-black text-center w-1/4 ml-9 "
+              className="text-black text-center sm:w-1/4 w-3/4 self-center"
               type="text"
               name="cityInput"
               id="cityInput"
