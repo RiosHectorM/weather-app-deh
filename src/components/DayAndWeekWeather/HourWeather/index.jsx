@@ -1,5 +1,5 @@
 import React from "react";
-import CloudIcon from "../WeekWeather/Icons/cloudIcon";
+import CloudIcon from "../WeekWeather/Icons/CloudIcon";
 import RainIcon from "../WeekWeather/Icons/RainIcon";
 import SnowIcon from "../WeekWeather/Icons/SnowIcon";
 import SunIcon from "../WeekWeather/Icons/SunIcon";
@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { slideIn } from "../../../constants/motion";
 
 function HourWeather(data) {
+  
   function horas(condition) {
     return condition === "Clear" ? (
       <SunIcon />
