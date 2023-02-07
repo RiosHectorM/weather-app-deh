@@ -1,6 +1,5 @@
 import React from "react";
-import CloudAndSun from "./Icons/CloudAndSun.jsx";
-import CloudIcon from "./Icons/cloudIcon.jsx";
+import CloudIcon from "./Icons/CloudIcon.jsx";
 import RainIcon from "./Icons/RainIcon.jsx";
 import SnowIcon from "./Icons/SnowIcon.jsx";
 import SunIcon from "./Icons/SunIcon.jsx";
