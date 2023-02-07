@@ -12,7 +12,7 @@ function Temp({ temp, max, min, feels}) {
     >
       {temp && (
         <div
-          className={`flex flex-col sm:flex-row flex-nowrap h-full overflow-auto bg-black bg-opacity-70 py-2 mx-10 md:mx-20 lg:mx-32 text-white sm:justify-around  justify-center rounded-b-3xl`}
+          className={`flex flex-col sm:flex-row flex-nowrap h-full bg-black bg-opacity-70 py-2 mx-10 md:mx-20 lg:mx-32 text-white sm:justify-around  justify-center rounded-b-3xl`}
         >
           <div className="flex sm:flex-col flex-row sm:order-first order-last   justify-center">
             <p className="self-center px-2">Feels Like:</p>
